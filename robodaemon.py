@@ -13,26 +13,27 @@
 #
 
 import logging
+import os
 import socket
 import json
 import time
 from pynetstring import encode,decode
-from miio import DeviceFactory
+from miio import RoborockVacuum
 logging.basicConfig(level=logging.INFO)
 
-BARESIP_HOST = "localhost"  # baresip host name, typically localhost
-BARESIP_PORT = 4444  # baresip TCP port (enable ctrl_tcp)
+BARESIP_HOST = os.getenv("BARESIP_HOST") # baresip host name, typically localhost
+BARESIP_PORT = int(os.getenv("BARESIP_PORT"))  # baresip TCP port (enable ctrl_tcp)
 
-ROBOROCK_IP="<ROBOROCK IP>"
-ROBOROCK_TOKEN="<YOUR TOKEN>"
+ip = os.getenv("MIROBO_IP")
+token = os.getenv("MIROBO_TOKEN")
 
-logging.info("Connecting to Roborock")
-dev = DeviceFactory.create(ROBOROCK_IP, ROBOROCK_TOKEN)
-logging.info("Roborock info: {}".format(dev.info()))
+logging.info("Connecting to Roborock IP={}, TOKEN={}".format(ip,token))
+roborock = RoborockVacuum(ip,token)
+logging.info("Connected! {}".format(roborock.info()))
 
 def start_roborock():
     logging.info("Starting to clean")
-    dev.resume_or_start()
+    roborock.resume_or_start()
     #dev.find()
 
 hangup_message = '{"command":"hangup"}'
