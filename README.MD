@@ -19,8 +19,8 @@ The figure above illustrates roughly how this is working:
 
 - The button is integrated with the Router.
 - The router is configured to make a call to an internal SIP account if the button is pressed. For AVM Fritz!Boxes, this can be achieved by setting setting up a template. The template can be empty but only ring a number. The number needs to belong to a SIP account which baresip is configured against.
-- baresip (with ctrl_tcp enabled) runs on an arbitrary external host. We use a Pi Zero here and deploy the Script using Docker for the sake of convenience. The script is integrated using baresip's TCP control port, which emits [netstrings](http://cr.yp.to/proto/netswtrings.txt) upon SIP events.
-- The script parses the events and pushes a start command to the Vacuum (using [Python Miio](https://github.com/rytilahti/python-miio)
+- baresip (with ctrl_tcp enabled) runs on an arbitrary external host. We use a Pi Zero here and deploy the script using docker for the sake of convenience. The script is integrated using baresip's TCP control port, which emits [netstrings](http://cr.yp.to/proto/netswtrings.txt) upon SIP events.
+- The script parses the events and pushes a start command to the Vacuum (using [Python Miio](https://github.com/rytilahti/python-miio))
 
 
 ## Anticipated question
@@ -49,4 +49,4 @@ Rough guide how to get this running:
 
 ## Docker
 
-As installing Python Miio takes ages on slow boxes like the Pi Zero, we also provide a Dockerfile here. 
+As installing Python Miio takes ages on slow boxes like the Pi Zero, we also provide a Dockerfile here.
