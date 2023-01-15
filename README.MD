@@ -39,6 +39,14 @@ Rough guide how to get this running:
   - Enable the ctrl_tcp module
 2. Install requirements: ```pip3 install -r requirements.txt```
 3. Obtain the IP address and the token of your roborock device. See the [Python Miio](https://github.com/rytilahti/python-miio) documentation how to do this.
-4. Adjust settings in robodaemon.py
+4. Cofigure some environment variables:
+   - BARESIP_PORT   Needs to contain the TCP port of baresip's ctrl_tcp module
+   - BARESIP_HOST   Contains the hostname of the machine running baresip (typically localhost)
+   - MIROBO_IP      IP address of your vacuum cleaner
+   - MIROBO_TOKEN   Access token for your robo
 5. Start baresip
 6. Start this script & have fun!
+
+## Docker
+
+As installing Python Miio takes ages on slow boxes like the Pi Zero, we also provide a Dockerfile here. 
