@@ -1,8 +1,8 @@
 # baresip-roborock - Start your MI vacuum on receiving a phone call
 
-This script allows a Xiaomi Roborock vacuum cleaner to be started if a call comes e on a SIP account. This is particularly useful if you have a home router (e.g. an AVM Fritz!Box) and you want to trigger the Roborock from such a ecosystem. SIP is a very widely adopted protocol, and using SIP for signalling avoids an implementation for a particular router or smart home API.
+This script allows a Xiaomi Roborock vacuum cleaner to be started if a call arrives a SIP account. This is particularly useful if you have a home router (e.g. an AVM Fritz!Box) and you want to trigger the Roborock from such a ecosystem. SIP is a very widely adopted protocol, and using SIP for signalling avoids an implementation for a particular router or smart home API.
 
-## Example Use scenario
+## Example use scenario
 
 We've used this script to start the Roborock cleaner if a button is pressed on an AVM Fritz!Dect 440 button:
 
